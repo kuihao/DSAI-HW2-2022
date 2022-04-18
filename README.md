@@ -14,7 +14,12 @@ Short selling is permitted. <br>
 ### GOAL
 Maximize revenue in 20 days.
 ### Q&A
-Can I buy one stock at first day (status = 1), the sell and short selling of it at the same sencond day (status = -1)?  
+Q: Can I buy one stock at first day (status = 1), the sell and short selling of it at the same sencond day (status = -1)?<br>
+A: Outputs 描述的是 "操作" 而非狀態，1 為買入一張股票，0 為不操作，-1 為賣出一張股票<br>
+也就是說，如果output的前兩天都是1即代表，你同時持有兩張股票是種違規操作，而你的例子<br>
+Day 1 outputs "1"<br>
+Day 2 outputs "-1"<br>
+代表你最後不持有任何股票
 ## NSTRUCTIONS FOR USE
 (環境建置及程式使用說明)
 ### Prerequisite
