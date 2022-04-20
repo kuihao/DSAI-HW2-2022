@@ -24,6 +24,10 @@ Day 2 outputs "-1"<br>
 (環境建置及程式使用說明)
 ### Prerequisite
 - [conda](https://docs.conda.io/en/latest/index.html)
+- To save the requirements.txt
+```shell 
+pip freeze > requirements.txt  
+```
 ### Build Eev.
 create an python 3.6 env.
 ```sh 
