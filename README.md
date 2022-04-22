@@ -55,7 +55,7 @@ pip freeze > requirements.txt
 ### Build Eev.
 create an python 3.6 env.
 ```sh 
-conda create -n StockProfitCalculator-py36 python=3.6.4
+conda create -n StockProfitCalculator-py36 python=3.6.4 tensorflow-gpu
 ```
 To activate Env. in **linux**:
 ```sh 
