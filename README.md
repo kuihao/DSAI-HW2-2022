@@ -67,7 +67,7 @@ activate StockProfitCalculator-py36
 ```
 ### Install Dependency
 ```
-pip install -r requirements.txt
+conda install --yes --file requirements.txt
 ```
 ## HIGHLIGHT (PROPOSED METHOD)
 ### Observeation
