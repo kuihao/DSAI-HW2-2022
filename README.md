@@ -123,6 +123,16 @@ python app.py --training training_data.csv --testing testing_data.csv --output o
         * The black line is the Train set y value, which is the actual opening price on the next day, for a total of 1248 days
         * The orange line is the model prediction, which is the actual opening price on the next day, for a total of 1248 days
         * The red line is the model prediction, that is, the model prediction of the next day's opening price, a total of 1248 days
-
+## TESTING RESULT
+* Model 1:
+  * Model-1 open
+    * ![Model-1 open](./img/plot_model1_pred_open.png)
+  * Model-1 close
+    * ![Model-2 close](./img/plot_model1_pred_close.png)
+* Model 2:
+  * Model-2 open
+    * ![Model-1 open](./img/plot_model2_pred_open.png)
+  * Model-2 close
+    * ![Model-2 close](./img/plot_model2_pred_close.png)
 ## EVALUTION
 (To be tested)
