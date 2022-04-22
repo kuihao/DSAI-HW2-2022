@@ -69,6 +69,10 @@ activate StockProfitCalculator-py36
 ```
 conda install --yes --file requirements.txt
 ```
+or
+```
+pip install -r requirements.txt
+```
 ## HIGHLIGHT (PROPOSED METHOD)
 ### Observeation
 Draw candlestick to observe the trend of input data<br>
