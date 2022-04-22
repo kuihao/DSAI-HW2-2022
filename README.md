@@ -85,13 +85,23 @@ Calculate moving average: Closing price<br>
 ![MA_ClosingPrice](./img/MA_ClosePrice.jpg)
 ### Model (GRU)
 **Model 1:** Input data for the previous **120 days (14 features)** to predict **tomorrow's opening and closing prices**
-* ![Model-1 Struct.](./img/model1_struct.png =250x)
+* ![Model-1 Struct.](./img/model1_struct.png)
 
 **Model 2:** Input data for the previous **120 days (14 features)** to predict the **opening** and **closing prices** for **tomorrow and the day after**
-* ![Model-2 Struct.](./img/model2_struct.png =250x)
+* ![Model-2 Struct.](./img/model2_struct.png)
 
 ## LISTING 
 (explain the function of each file)
+* **app.py 主程式**，使用方式如下: (與範例程式相同) 
+```shell 
+python app.py --training training_data.csv --testing testing_data.csv --output output.csv
+```
+* app_v2_Trader.ipynb，Data experiment, main model training and tuning. 
+* **app_v3_Only_Trader.ipynb**，Traing Part 的完成版，去除多餘函式並改寫成方便套用於 app.py 的格式
+* ./model，儲存多個實驗模型，穩定版本為 model(1/2)_2022_04_21__21_08_52.h5
+* ./log，對應實驗模型的實驗記錄
+* training_data.csv、testing_data.csv 作業提供的 raw data
+* output.csv 最終結果 (每次執行程式時，會自動把舊的 output.csv 刪除)
 ## ENVIRONMENT AND EXPERIMENT DESIGN
 * Python: 3.6 (3.6.4)
 * OS: Ubuntu 20.04 amd64
