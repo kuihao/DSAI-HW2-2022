@@ -45,8 +45,13 @@ Day 2 outputs "-1"<br>
 - [conda](https://docs.conda.io/en/latest/index.html)
 - To save the requirements.txt
 ```shell 
+conda list --export > requirements.txt
+```
+or
+```shell 
 pip freeze > requirements.txt  
 ```
+
 ### Build Eev.
 create an python 3.6 env.
 ```sh 
