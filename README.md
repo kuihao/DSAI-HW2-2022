@@ -41,8 +41,8 @@ Day 2 outputs "-1"<br>
 代表你最後不持有任何股票
 ## NSTRUCTIONS FOR USE
 (環境建置及程式使用說明)<br>
-<mark>請助教依照下方步驟建立 conda 虛擬環境</mark><br>
-<mark>Please follow the steps below to create the conda virtual environment.</mark>
+<div style="background-color: #FFFF00">請助教依照下方步驟建立 conda 虛擬環境</div><br>
+<div style="background-color: #FFFF00">Please follow the steps below to create the conda virtual environment.</div>
 ### Prerequisite
 - [conda](https://docs.conda.io/en/latest/index.html) at least 4.10.3 
 
@@ -77,16 +77,19 @@ pip freeze > requirements.txt
 ```
 
 ### To execute our code
-<mark>請助教輸入下方命令以執行 app.py</mark><br>
-<mark>Please enter the following command to run app.py</mark><br>
-**Recommendation** 
-Default **retrain mode** is on, if the assistant coach thinks the program is running too long please enter the following formula code to turn off retrain mode.
+<div style="background-color: #FFFF00"><b>請助教輸入下方命令以執行 app.py</b></div>
+<div style="background-color: #FFFF00"><b>Please enter the following command to run app.py</b></div>
+
+**Recommendation:** 
+default **retrain mode** is on, if the assistant coach thinks the program is running too long please enter the following formula code to turn off retrain mode.
+
 ```shell 
 python app.py --training training_data.csv --testing testing_data.csv --output output.csv
 ```
-<mark>**若程式執行時間太久、超過允許執行時間上限**，請助教改執行下方程式碼</mark><br>
-<mark>**If the program takes too long to run and exceeds the allowable execution time limit,** please ask the assistant teacher to run the following code instead</mark><br>
+<div style="background-color: #FFFF00"><b>若程式執行時間太久、超過允許執行時間上限，請助教改執行下方程式碼</b></div>
+<div style="background-color: #FFFF00"><b>If the program takes too long to run and exceeds the allowable execution time limit, please ask the assistant teacher to run the following code instead</b></div>
 To turn off retrain mode:
+
 ```shell 
 python app.py --training training_data.csv --testing testing_data.csv --output output.csv --retrain 0
 ```

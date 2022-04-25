@@ -407,12 +407,16 @@ class Trader():
                                                 print_explain=False)
 
         print("Model predicting...")
-        predict1 = self.model_1.predict(self.Test_set['x'][-1:]) # 輸出明天開盤價、收盤價
-        predict2 = self.model_2.predict(self.Test_set['x'][-1:]) # 輸出明天及後天開盤價、收盤價
+        if self.model_1:
+            predict1 = self.model_1.predict(self.Test_set['x'][-1:]) # 輸出明天開盤價、收盤價
+        if self.model_2:
+            predict2 = self.model_2.predict(self.Test_set['x'][-1:]) # 輸出明天及後天開盤價、收盤價
 
         # 紀錄每次的預測 (用於畫圖)
-        self.predict1_history.append(predict1)
-        self.predict2_history.append(predict2)
+        if self.model_1:
+            self.predict1_history.append(predict1)
+        if self.model_2:
+            self.predict2_history.append(predict2)
 
         # 預測一天的 strategy
         # 目前持有價格及預測的價差，0=>變低, 1=>變高, 2=>變化不大(<0.03)
@@ -574,7 +578,7 @@ if __name__ == "__main__":
 
     training_data = load_data(args.training) # load_data("training_data.csv")
     trader = Trader(datetime_thisRun_str) # 代入目前的時間 (datetime_thisRun_str)，純粹用於指定 model 的儲存路徑，不會用於訓練或預測
-    trader.train(training_data, usePreTrain=True, choosen_model=[True, True]) # choosen_model: 選擇使用 model 1 及 model 2
+    trader.train(training_data, usePreTrain=True, choosen_model=[False, True]) # choosen_model: 選擇使用 model 1 及 model 2
 
     testing_data = load_data(args.testing) # load_data("testing_data.csv")
     with open(args.output, "w") as output_file:
@@ -586,5 +590,5 @@ if __name__ == "__main__":
             output_file.write('\n')
 
             # this is your option, you can leave it empty.
-            trader.re_training(doReTrain=bool(int(args.retrain)), choosen_model=[True, True]) # choosen_model: 選擇使用 model 1 及 model 2
+            trader.re_training(doReTrain=bool(int(args.retrain)), choosen_model=[False, True]) # choosen_model: 選擇使用 model 1 及 model 2
     print("Finish.")
