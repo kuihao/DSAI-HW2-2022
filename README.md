@@ -127,6 +127,28 @@ python app.py --training training_data.csv --testing testing_data.csv --output o
         * The black line is the Train set y value, which is the actual opening price on the next day, for a total of 1248 days
         * The orange line is the model prediction, which is the actual opening price on the next day, for a total of 1248 days
         * The red line is the model prediction, that is, the model prediction of the next day's opening price, a total of 1248 days
+
+## Action Strategy
+
+- 使用模型預測明後兩天的開盤及收盤價
+- 針對以下規則進行股票的買賣行為
+  明後兩天開盤結果的高低定義為，若手中持有股票或賣空股票，則會跟買價或賣空價進行比較；若手中沒有股票，則會跟今天的開盤價進行比較，比較時會有一固定閥值(在此設定0.03)，需大於此閥值才算有變化。若小於此閥值則輸出action為0。
+
+    | 持有股票 | 預測後兩天開盤結果 | Action |
+    | -------- | ------------------ | ------ |
+    | 1        | 高高               | -1     |
+    | 1        | 高低               | -1     |
+    | 1        | 低高               | 0      |
+    | 1        | 低低               | -1     |
+    | 0        | 高高               | 1      |
+    | 0        | 高低               | -1     |
+    | 0        | 低高               | 1      |
+    | 0        | 低低               | -1     |
+    | -1       | 高高               | 1      |
+    | -1       | 高低               | 0      |
+    | -1       | 低高               | 1      |
+    | -1       | 高低               | 1      |
+    
 ## TESTING RESULT
 * Model 1:
   * Model-1 open
