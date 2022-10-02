@@ -183,4 +183,7 @@ python app.py --training training_data.csv --testing testing_data.csv --output o
   * Model-2 close
     * ![Model-2 close](./img/plot_model2_pred_close.png)
 ## EVALUTION
-The result of [the profit calculation program](https://github.com/kuihao/StockProfitCalculator_CondaVer) is **1.9699999999999989** (input example 20 days testing.csv and out output.csv) (retrain mode result is as same as non-retrain mode).
+* The result of [the profit calculation program](https://github.com/kuihao/StockProfitCalculator_CondaVer) is **1.9699999999999989** (input example 20 days testing.csv and out output.csv) (retrain mode result is as same as non-retrain mode).
+* Result Ranking: 15/62
+* Grade distribution:
+    * <img src="img/hw2_rank.jpg" height="50%" width="50%">
